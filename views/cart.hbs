@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script
+  /src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+  
+  <form action="/cart" method="POST">
+  <h1>My Cart</h1>
+  <p>shop more <a href="ind.html">show</a></p>
+  <table>
+    <tr>
+      <th>username</th>
+      <td>{{user.username}}</td>
+    </tr>
+    <tr>
+      <th>user id</th>
+      <td>{{user.id}}</td>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <td>{{user.phone}}</td>
+    </tr>
+  </table></form>
+  <h2>Your currently ordered item's details </h2>
+  <ul id="list" >
+            {{#each item as |todo|}}
+          <li>id:{{todo.id}}<br>name:{{todo.name}}<br>price:{{todo.price}}</li>
+            {{/each}}
+        </ul>
+  
+</body>
+
+<footer>
+  
+</footer>
+
+
+</html>

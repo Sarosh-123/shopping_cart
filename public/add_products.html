@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.3.1.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+ 
+  <script src="add_products.js"></script>
+  <script src="shop.js"></script>
+  
+  
+</head>
+<body>
+    <div class="p-4">
+        <h3 class="text-center">Add products</h3>
+  <div class="row">
+      <div class="col"></div>
+  <div class="col-6">
+      <form>
+          <div class="form-group">
+              <lable for="productname">product name</lable>
+              <input type="text" id="productname">
+          </div>
+
+          <div class="form-group">
+                <lable for="manufacturer">manufacturer name</lable>
+                <input type="text" id="manufacturer">
+            </div>
+
+            <div class="form-group">
+                    <lable for="price">price</lable>
+                    <input type="number" id="price">
+                </div>
+                
+      </form>
+      <button class="btn btn-secondary" id="productbtn">Add</button>
+  </div>
+   <div class="col"></div>
+   
+  </div>
+</body>
+</html>
