@@ -9,9 +9,18 @@
   /src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-  
+  <script>
+    $.get('/items',(data)=>{
+    for(let item of data){
+      console.log(item.id)
+      $('#list').append(
+        $('<li>').text(
+          `id:${item.id},
+          name:${item.name},
+          price:${item.price}`)
+      )}})
+  </script>
 </head>
-
 <body>
   
   <form action="/cart" method="POST">
@@ -32,17 +41,10 @@
     </tr>
   </table></form>
   <h2>Your currently ordered item's details </h2>
-  <ul id="list" >
-            {{#each item as |todo|}}
-          <li>id:{{todo.id}}<br>name:{{todo.name}}<br>price:{{todo.price}}</li>
-            {{/each}}
+  <ul id="list">
         </ul>
   
 </body>
-
-<footer>
-  
-</footer>
 
 
 </html>

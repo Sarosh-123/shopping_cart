@@ -32,11 +32,12 @@ function createproductcard(product){
 }
 function addCart(id,i,name)
 {
-    console.log()
-   $.post('/cart',{
+   $.post('/items',{
         id:i,
         name:name,
         price:id
     })
 }
+
+
 

@@ -61,15 +61,19 @@ const items = db.define('item', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey:true
-  }
-  /*name:{
+  },
+  id1:{
+    type:Sequelize.INTEGER,
+    
+  },
+  name:{
     type:Sequelize.STRING,
     allowNull:true
   },
   price:{
     type:Sequelize.NUMBER,
     allowNull:true
-  }*/
+  }
 })
 db.sync(()=>
 {

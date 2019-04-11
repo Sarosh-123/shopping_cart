@@ -26,9 +26,9 @@ app.use('/api',require('./routes/api').route)
 app.use('/login', (require('./routes/login')).route)
 app.use('/users', (require('./routes/user')).route)
 app.use('/cart', (require('./routes/cart')).route)
-//app.use('/items', (require('./public/items')).route)
+app.use('/items', (require('./routes/items')).route)
 app.get('/',(req,res)=>{
-  res.redirect('/ind.html')})
+  res.redirect('/login')})
 
 db.sync()
   .then(() => {

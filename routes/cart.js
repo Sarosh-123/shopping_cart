@@ -5,19 +5,7 @@ route.get('/', (req, res) => {
   if (!req.user) {
     return res.redirect('/login')
   }
-  res.render('cart', {item,user:req.user})
-})
-route.post('/',(req,res)=>{
-  
-   item.push({
-       id:req.body.id,
-       price:req.body.price,
-       name:req.body.name
-   
-     })
-    
-
-  res.send(item)
+  res.render('cart',{user:req.user})
 })
 
 
