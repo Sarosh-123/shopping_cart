@@ -32,6 +32,8 @@ function createproductcard(product){
 }
 function addCart(id,i,name)
 {
+
+    window.alert("if this item is taken, it won't be added to your cart")
    $.post('/items',{
         id:i,
         name:name,
