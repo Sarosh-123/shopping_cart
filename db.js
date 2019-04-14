@@ -10,12 +10,6 @@ const db = new Sequelize({
 })
 
 const Product = db.define('product', {
-
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement:true,
-    primaryKey:true
-  },
   name:{
     type:Sequelize.STRING,
     allowNull:true
@@ -33,11 +27,6 @@ const Product = db.define('product', {
 })
 const User = db.define('user', {
 
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement:true,
-    primaryKey:true
-  },
   username:{
     type:Sequelize.STRING,
     allowNull:true
@@ -56,25 +45,14 @@ const User = db.define('user', {
   }
   
 })
-const items = db.define('item', {
-
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey:true
-  },
-  id1:{
+const items = db.define('item',{
+  id2:{
     type:Sequelize.INTEGER,
     
-  },
-  name:{
-    type:Sequelize.STRING,
-    allowNull:true
-  },
-  price:{
-    type:Sequelize.NUMBER,
-    allowNull:true
   }
 })
+items.belongsTo(Product)
+Product.hasMany(items)
 db.sync(()=>
 {
   console.log('done...')

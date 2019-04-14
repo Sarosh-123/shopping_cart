@@ -22,7 +22,7 @@ function createproductcard(product){
        <div class="manufacturer">${product.manufacturer}</div>
        <div class="row">
            <div class="col m-3 p-3"><b>${product.price}</b></div>
-           <button onClick="addCart(${product.price},${product.id},'${product.name}')" id="${product.id}" class="col m-2 p-2 btn btn-primary" >Buy</button>
+           <button onClick="addCart(${product.id})" id="${product.id}" class="col m-2 p-2 btn btn-primary" >Buy</button>
    
        </div>
            </div>
@@ -30,14 +30,12 @@ function createproductcard(product){
     `)
     
 }
-function addCart(id,i,name)
+function addCart(productId)
 {
 
     window.alert("if this item is taken, it won't be added to your cart")
    $.post('/items',{
-        id:i,
-        name:name,
-        price:id
+        productId
     })
 }
 

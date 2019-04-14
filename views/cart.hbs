@@ -13,12 +13,14 @@
     $.get('/items',(data)=>{
     for(let item of data){
       console.log(item.id)
-      $('#list').append(
-        $('<li>').text(
-          `id:${item.id},
-          name:${item.name},
-          price:${item.price}`)
-      )}})
+      $('#table').append(`
+          <tr>
+          <th>${item.product.id}</th>
+          <th>${item.product.name}</th>
+          <th>${item.product.price}</th>
+          </tr>
+          `)
+      }})
   </script>
 </head>
 <body>
@@ -41,6 +43,13 @@
     </tr>
   </table></form>
   <h2>Your currently ordered item's details </h2>
+  <table id="table" border="2">
+    <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Price</th>
+    </tr>
+  </table>
   <ul id="list">
         </ul>
   
